@@ -1,0 +1,216 @@
+---
+title: "Matias Leandro Andina's CV"
+author: Matias Leandro Andina
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: true
+output:
+  pagedown::html_resume:
+    css: ['dd_cv.css', 'resume']
+    self_contained: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "data/",  
+  pdf_mode = params$pdf_mode
+)
+
+# filter data !
+CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
+
+```
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+# Aside
+
+<!-- Swap image with your preferred logo -->
+
+<!-- ![logo](){width=100%} -->
+
+```{r photo}
+source("parse_twitter_pic.r")
+im <- parse_twitter_pic()
+im
+```
+
+##  {#contact}
+
+```{r}
+CV %>% print_contact_info()
+```
+
+```{r, eval=FALSE}
+# Not really interested in this
+# also, when rendered, it's not centered
+
+if(params$pdf_mode){
+  cat("View this CV online with links at _nickstrayer.me/datadrivencv/_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+}
+```
+
+## <i class="fas fa-language"></i> Languages {#languages}
+
+-   Spanish (native)
+-   English (bilingual)
+-   Portuguese (intermediate)
+
+## <i class="fa fa-code"></i> Programming {#skills}
+
+-   R
+-   Python
+-   Matlab
+-   git / GitHub
+
+## <i class="fa fa-area-chart"></i> Data analysis {#skills}
+
+-   Data visualization (ggplot2, seaborn)
+-   Linear models (GLM, GLMM)
+-   Machine Learning (sklearn)
+-   Image Processing (opencv)
+
+## <i class="fas fa-book-open"></i> Literate Coding {#skills}
+
+-   Quarto
+-   Rmarkdown
+-   LaTeX
+
+# Main
+
+## Matias Leandro Andina {#title}
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+#CV %<>% print_text_block("intro") 
+```
+
+## Education {data-icon="graduation-cap" data-concise="true"}
+
+```{r}
+CV %<>% print_section('education')
+```
+
+## Research Experience {data-icon="flask"}
+
+```{r}
+CV %<>% print_section('research_positions')
+```
+
+<!-- These breaks just force a new page so section doesnt get cut off -->
+
+<br> <br> 
+<br> <br> 
+<br> <br>
+<br> <br>
+<br> <br>
+
+## Teaching Experience {data-icon="chalkboard-teacher"}
+
+::: aside
+```{r}
+#CV %<>% print_text_block('teaching_experience_aside')
+```
+:::
+
+```{r}
+CV %<>% print_section('teaching_positions')
+```
+
+## Selected Publications {data-icon="file"}
+
+```{r}
+CV %<>% print_section('academic_articles')
+```
+
+Complete publication list at [Google Scholar](https://scholar.google.com/citations?user=PnTVdPAAAAAJ&hl=en).
+
+## Selected Talks & Invited Lectures {data-icon="bullhorn"}
+
+```{r}
+CV %<>% print_section('talks')
+
+```
+
+## Conferences
+```{r}
+CV %<>% print_section('conferences')
+```
+
+
+## Awards {data-icon="star-o"}
+
+```{r}
+CV %<>% print_section('awards')
+```
+
+## Mentoring {data-icon="handshake-o" data-concise="true"}
+
+```{r}
+CV %<>% print_section('mentoring')
+
+
+```
+
+## Service {data-icon="university"}
+
+```{r}
+CV %<>% print_section('service')
+```
+
+
+## Software Development {data-icon="desktop"}
+
+:::aside
+I have a strong commitment towards using and developing open source tools. 
+:::
+
+```{r}
+CV %<>% print_section('software')
+```
+
+
+Complete List of Software at [Github](https://github.com/matiasandina).
+
+
+## Selected Data Science Writing {data-icon="chart-line"}
+
+::: aside
+```{r}
+CV %<>% print_text_block('data_science_writing_aside')
+```
+:::
+
+```{r}
+CV %<>% print_section('data_science_writings')
+```
+
+```{r}
+#CV %<>% print_links()
+```
+
+:::footer
+Last updated on `r Sys.Date()`.
+:::

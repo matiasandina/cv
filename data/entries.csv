@@ -1,0 +1,44 @@
+A filter variable that is used to decide if entry is in the smaller resume.,Where in your CV this entry belongs,Main title of the entry,Location the entry occured,Primary institution affiliation for entry,Start date of entry (year),"End year of entry. Set to ""current"" if entry is still ongoing.","Each description column is a separate bullet point for the entry. If you need more description bullet points simply add a new column with title ""description_{4,5,..}""",X8,X9,X11
+in_resume,section,title,loc,institution,start,end,description_1,description_2,description_3,NA
+TRUE,education,"PhD. Student, Neuroscience",Massachusetts Institute of Technology,"Massachusetts, USA",2021,NA,NA,NA,NA,NA
+TRUE,education,Graduate Teaching Certificate,Massachusetts Institute of Technology,"Massachusetts, USA",2022,NA,"Research-based strategies for lesson, subject, and program design and development",NA,NA,NA
+TRUE,education,"MSc., Neuroscience",University of Massachusetts Amherst,"Massachusetts, USA",2016,2018,NA,NA,NA,NA
+TRUE,education,Biology Degree,University of Buenos Aires,"Buenos Aires, ARG",2010,2015,NA,NA,NA,NA
+TRUE,research_positions,Graduate Research Assistant,Massachusetts Institute of Technology,"Massachusetts, USA",2022,NA,Designed and built behavioral setup for synchronized behavior and physiology recordings,Designed experiments and collected terabyte datasets to study hunger and sleep in mice,NA,Led team of 10 people to produce 5-year research project publication
+TRUE,research_positions,Technical Associate,Massachusetts Institute of Technology,"Massachusetts, USA",2018,2021,"Provided technical support for lab procedures (surgeries, wet lab, colony management)","Designed continuous home cage monitoring system for movement, temperature, and food intake",NA,NA
+TRUE,research_positions,Graduate Research Assistant,University of Massachusetts Amherst,"Massachusetts, USA",2016,2018,Designed experiments and collected data to study maternal behavior in rats,NA,NA,NA
+TRUE,research_positions,Undergraduate Researcher,University of Buenos Aires,"Buenos Aires, ARG",2013,2015,Tested a novel device to measure escape responses in crabs,Designed experiments and collected data to study learning and memory mechanisms,NA,NA
+FALSE,industry_positions,NA,NA,NA,NA,NA,NA,NA,NA,NA
+TRUE,teaching_positions,Teaching Assistant: Statistics for Brain and Computer Sciences,Massachusetts Institute of Technology,"Massachusetts, USA",NA,2022,Taught statistics recitation lectures.,NA,NA,NA
+TRUE,teaching_positions,Teaching Assistant: Methods of Inquiry in Psychology,University of Massachusetts Amherst,"Massachusetts, USA",NA,2018,Taught statistics recitation lectures for 20 students.,NA,NA,NA
+TRUE,teaching_positions,Instructor of Record: Animal Behavior,University of Massachusetts Amherst,"Massachusetts, USA",NA,2017,Selected topics in animal behavior and designed curriculum.,Taught weekly seminars in animal behavior for 40 students,CITRL associate,NA
+TRUE,data_science_writings,Queen’s Gambit,"<i class=""fas fa-link""></i> https://matiasandina.netlify.app/2021/02/queens-gambit/",NA,NA,2020,NA,NA,NA,NA
+TRUE,data_science_writings,Birthday Meritocracy,"<i class=""fas fa-link""></i> https://matiasandina.netlify.app/2019/05/birthday-meritocracy/",NA,NA,2019,NA,NA,NA,NA
+FALSE,about_me_press,NA,NA,NA,NA,NA,NA,NA,NA,NA
+FALSE,by_me_press,NA,NA,NA,NA,NA,NA,NA,NA,NA
+TRUE,academic_articles,Two spaced training trials induce associative ERK-dependent long term memory in Neohelice granulata.,"Behavioral Brain Research. <i class=""fas fa-link""></i> https://doi.org/10.1016/j.bbr.2021.113132",NA,NA,2021,"Ojea Ramos S., **Andina M.**, Romano A., Feld, M",NA,NA,NA
+TRUE,academic_articles,Interleukin-17a restores sociability in several mouse models for neurodevelopmental disorders.,"Nature. <i class=""fas fa-link""></i> https://doi.org/10.1038/s41586-019-1843-6",NA,NA,2020,"Reed M.D., Yim Y.S., (...), **Andina M.**, (...), Huh J.R., Choi G.B.",NA,NA,NA
+TRUE,awards,Picower Neurological Disorder Research Fund,Massachusetts Institute of Technology,NA,2022,2024,"Secured $75,000 to lead a collaborative research effort",NA,NA,NA
+TRUE,awards,Arete Fellowship,Massachusetts Institute of Technology,NA,NA,2021,Participated on weekly seminars in Effective Altruism discussion panel,NA,NA,NA
+TRUE,awards,IBRO-LARC,Talleres Open Source,NA,NA,2021,"Secured $5,000 to organize open-hardware workshop in Latin America. <i class=""fas fa-link""></i> https://tallerneurolatam.netlify.app/",NA,NA,NA
+TRUE,awards,Presidential Fellowship,Massachusetts Institute of Technology,NA,NA,2021,"Secured $43,000 to fund my PhD research",NA,NA,NA
+TRUE,awards,College of Natural Sciences Fellowship,University of Massachusetts Amherst,NA,NA,2017,Awarded fellowship to design and teach a first year seminar class,NA,NA,NA
+TRUE,awards,Neuroscience and Behavior Program Fellowship,University of Massachusetts Amherst,NA,NA,2016,"Secured $27,000 to fund my MSc research",NA,NA,NA
+TRUE,awards,Young ISN Neurochemistry,University of Buenos Aires,NA,NA,2015,Secured travel funding to present my Undergraduate Research at a conference,NA,NA,NA
+TRUE,talks,Building a user-driven database of open neuroscience projects,Organisation for Human Brain Mapping,NA,NA,2021,"<i class=""fas fa-link""></i> bit.ly/OHBM-21-MLA",NA,NA,NA
+TRUE,talks,Data Visualization,Harvard Philantrophy Advisory Fellowship,"Massachusetts, USA",,2019,"<i class=""fas fa-link""></i> bit.ly/PAF-2019-MLA",,,
+TRUE,software,FedWatcher: an open-source python software for real-time serial communication with FED3 devices.,"<i class=""fas fa-link""></i> https://github.com/matiasandina/FEDWatcher",NA,NA,NA,NA,NA,NA,NA
+TRUE,software,FLOW: an open-source home cage monitoring system of temperature and movement in rodents.,"<i class=""fas fa-link""></i> https://github.com/matiasandina/homecage_quantification",NA,NA,NA,NA,NA,NA,NA
+TRUE,software,nobrainr: an open-source simple interface to plot plates from the Mouse Allen Brain Atlas using R.,"<i class=""fas fa-link""></i> https://github.com/matiasandina/nobrainr",NA,NA,NA,NA,NA,NA,NA
+TRUE,service,Co-founder and team member,Talleres Open Source,NA,2020,2021,Organization of workshops for Open Source tools in Neuroscience.,"<i class=""fas fa-link""></i> https://talleresos.netlify.app/",,NA
+TRUE,service,Team member,Open Neuroscience,NA,2020,NA,Repository of open-source neuroscience tools,"<i class=""fas fa-link""></i> https://open-neuroscience.com/",,NA
+TRUE,service,NSB Seminar Committee,University of Massachusetts Amherst,NA,2016,2018,Organization of invited Faculty weekly talks,NA,NA,NA
+TRUE,service,NSB Mentoring Committee.,University of Massachusetts Amherst,NA,2017,2018,Organization of first year graduate student activities and mentoring events,NA,NA,NA
+TRUE,mentoring,John Eastman,Massachusetts Institute of Technology,NA,NA,2021,FedWatcher. Open Software & Hardware design and fabrication,NA,NA,NA
+TRUE,mentoring,Penelope Herrero,Massachusetts Institute of Technology,NA,2021,2022,Open Hardware design and fabrication,NA,NA,NA
+TRUE,mentoring,Idil Tuncali,University of Massachusetts Amherst,NA,2017,2018,"Statistics, R programming, and Analysis of Ultrasonic Vocalizations",NA,NA,NA
+TRUE,mentoring,Nneka Southwell,University of Massachusetts Amherst,NA,NA,2017,Basic laboratory techniques in rodents,NA,NA,NA
+TRUE,conferences,Interleukin-17a restores sociability in several mouse models for neurodevelopmental disorders.,Society For Neuroscience,,,2019,"Reed M.D., Yim Y.S., (...), **Andina M.,** (...), Huh J.R., Choi G.B",,,
+TRUE,conferences,Long-term memory induced by two training trials in the crab Neohelice granulata,Federation of European Neuroscience Societies,,,2018,"Ojea Ramos S., **Andina M.,** Feld M",,,
+TRUE,conferences,Two-trial long-term memory in the crab Neohelice granulata,Argentinean Society of Neuroscience Research,,,2015,"**Andina M.,** Romano A., Feld M",,,
+TRUE,conferences,Measuring crab ́s memory: improving conditioning,Argentinean Society of Neuroscience Research,,,2013,"**Andina M.,** (…), Romano A., Feld M.",,,

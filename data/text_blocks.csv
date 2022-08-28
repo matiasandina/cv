@@ -1,0 +1,6 @@
+Id used for finding text block,Contents of text block. Supports markdown formatting.
+loc,text
+intro,
+industy_experience_aside,
+teaching_experience_aside,
+data_science_writing_aside,I love to visualize data. I post my visualizations and insights in [my personal blog](https://matiasandina.netlify.app/post/)

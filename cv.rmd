@@ -121,11 +121,13 @@ CV %<>% print_section('research_positions')
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
 
+<!--
 <br> <br> 
 <br> <br> 
 <br> <br>
 <br> <br>
 <br> <br>
+ -->
 
 ## Teaching Experience {data-icon="chalkboard-teacher"}
 

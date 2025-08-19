@@ -11,7 +11,7 @@ rmarkdown::render("cv.rmd",
                   output_file = "cv.html")
 
 # This is for github pages
-fs::file_copy("cv.html", "index.html")
+fs::file_copy("cv.html", "index.html", overwrite = TRUE)
 
 # Knit the PDF version to temporary html location
 tmp_html_cv_loc <- fs::file_temp(ext = ".html")

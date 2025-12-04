@@ -16,7 +16,7 @@ TRUE,data_science_writings,Queen’s Gambit,"<i class=""fas fa-link""></i> https
 TRUE,data_science_writings,Birthday Meritocracy,"<i class=""fas fa-link""></i> https://matiasandina.com/posts/2019-05-09-birthday-meritocracy/",NA,NA,2019,NA,NA,NA,NA
 FALSE,about_me_press,NA,NA,NA,NA,NA,NA,NA,NA,NA
 FALSE,by_me_press,NA,NA,NA,NA,NA,NA,NA,NA,NA
-TRUE,academic_articles,IL-1R1-positive dorsal raphe neurons drive self-imposed social withdrawal in sickness,"Cell <i class=""fas fa-link""></i> https://doi.org/10.1016/j.cell.2025.10.040",NA,NA,NA,"L Yang, **ML Andina**, M Witkowski, H King, I Wickersham, JR Huh, GB Choi",NA,NA,NA
+TRUE,academic_articles,IL-1R1-positive dorsal raphe neurons drive self-imposed social withdrawal in sickness,"Cell <i class=""fas fa-link""></i> https://doi.org/10.1016/j.cell.2025.10.040",NA,NA,2025,"L Yang, **ML Andina**, M Witkowski, H King, I Wickersham, JR Huh, GB Choi",NA,NA,NA
 TRUE,academic_articles,Two spaced training trials induce associative ERK-dependent long term memory in Neohelice granulata.,"Behavioral Brain Research. <i class=""fas fa-link""></i> https://doi.org/10.1016/j.bbr.2021.113132",NA,NA,2021,"Ojea Ramos S., **Andina M.**, Romano A., Feld, M",NA,NA,NA
 TRUE,academic_articles,Interleukin-17a restores sociability in several mouse models for neurodevelopmental disorders.,"Nature. <i class=""fas fa-link""></i> https://doi.org/10.1038/s41586-019-1843-6",NA,NA,2020,"Reed M.D., Yim Y.S., (...), **Andina M.**, (...), Huh J.R., Choi G.B.",NA,NA,NA
 TRUE,awards,Picower Neurological Disorder Research Fund,Massachusetts Institute of Technology,NA,2022,2024,"Secured $75,000 to lead a collaborative research effort",NA,NA,NA
@@ -28,9 +28,10 @@ TRUE,awards,Neuroscience and Behavior Program Fellowship,University of Massachus
 TRUE,awards,Young ISN Neurochemistry,University of Buenos Aires,NA,NA,2015,Secured travel funding to present my Undergraduate Research at a conference,NA,NA,NA
 TRUE,talks,Building a user-driven database of open neuroscience projects,Organisation for Human Brain Mapping,NA,NA,2021,"<i class=""fas fa-link""></i> bit.ly/OHBM-21-MLA",NA,NA,NA
 TRUE,talks,Data Visualization,Harvard Philantrophy Advisory Fellowship,"Massachusetts, USA",,2019,"<i class=""fas fa-link""></i> bit.ly/PAF-2019-MLA",,,
-TRUE,software,FedWatcher: an open-source python software for real-time serial communication with FED3 devices.,"<i class=""fas fa-link""></i> https://github.com/matiasandina/FEDWatcher",NA,NA,NA,NA,NA,NA,NA
-TRUE,software,FLOW: an open-source home cage monitoring system of temperature and movement in rodents.,"<i class=""fas fa-link""></i> https://github.com/matiasandina/homecage_quantification",NA,NA,NA,NA,NA,NA,NA
-TRUE,software,nobrainr: an open-source simple interface to plot plates from the Mouse Allen Brain Atlas using R.,"<i class=""fas fa-link""></i> https://github.com/matiasandina/nobrainr",NA,NA,NA,NA,NA,NA,NA
+TRUE,software,FedWatcher,"Open-source Python tool enabling real-time closed-loop communication with FED3 behavioral devices. Used to automate feeding, fasting, and stimulus-delivery paradigms in rodent experiments. <i class=""fas fa-link""></i> https://github.com/matiasandina/FEDWatcher",NA,NA,NA,NA,NA,NA,NA
+TRUE,software,uid," R package for preprocessing, cleaning, and analyzing high-resolution telemetry data (temperature, activity) from rodent monitoring systems. Includes data QC, interpolation, artifact removal, and downsampling. <i class=""fas fa-link""></i> https://github.com/matiasandina/uid",,,,,,,
+FALSE,software,FLOW,"Open-source home cage monitoring system of temperature and movement in rodents. <i class=""fas fa-link""></i> https://github.com/matiasandina/homecage_quantification",NA,NA,NA,NA,NA,NA,NA
+TRUE,software,nobrainr,"R package providing fast visualization tools for Mouse Allen Brain Atlas plate drawing, useful for figure preparation and exploratory analysis. <i class=""fas fa-link""></i> https://github.com/matiasandina/nobrainr",NA,NA,NA,NA,NA,NA,NA
 TRUE,service,Co-founder and team member,Talleres Open Source,NA,2020,2021,Organization of workshops for Open Source tools in Neuroscience.,"<i class=""fas fa-link""></i> https://talleresos.netlify.app/",,NA
 TRUE,service,Team member,Open Neuroscience,,2020,2023,Repository of open-source neuroscience tools,"<i class=""fas fa-link""></i> https://open-neuroscience.com/",,NA
 TRUE,service,NSB Seminar Committee,University of Massachusetts Amherst,NA,2016,2018,Organization of invited Faculty weekly talks,NA,NA,NA
@@ -46,3 +47,18 @@ TRUE,conferences,Interleukin-17a restores sociability in several mouse models fo
 TRUE,conferences,Long-term memory induced by two training trials in the crab Neohelice granulata,Federation of European Neuroscience Societies,,,2018,"Ojea Ramos S., **Andina M.,** Feld M",,,
 TRUE,conferences,Two-trial long-term memory in the crab Neohelice granulata,Argentinean Society of Neuroscience Research,,,2015,"**Andina M.,** Romano A., Feld M",,,
 TRUE,conferences,Measuring crab ́s memory: improving conditioning,Argentinean Society of Neuroscience Research,,,2013,"**Andina M.,** (…), Romano A., Feld M.",,,
+TRUE,teaching_positions_short,Instructor of Record and Teaching Assistant roles in neuroscience and statistics.  ,"[<i class=""fas fa-link""></i> Full teaching list](https://matiasandina.github.io/cv_academic.html#teaching)",,2016,2023,,,,
+TRUE,awards_short,Picower Neurological Disorder Research Fund,Massachusetts Institute of Technology,NA,2022,2024,"Secured $75,000 to lead a collaborative research effort",NA,NA,NA
+TRUE,awards_short,Arete Fellowship,Massachusetts Institute of Technology,NA,NA,2021,Participated on weekly seminars in Effective Altruism discussion panel,NA,NA,NA
+TRUE,awards_short,Presidential Fellowship,Massachusetts Institute of Technology,NA,NA,2021,"Secured $43,000 to fund my PhD research",NA,NA,NA
+TRUE,mentoring_short,Mentoring Undergraduates and Technicians,,,2017,,"8 years of mentoring students and technicians across experimental design, open-source hardware/software (FedWatcher), R/Python analysis, and rodent surgical methods. Experienced in onboarding, training, and supporting junior researchers across projects of varying technical complexity.",,,
+TRUE,data_science_writings_short,Personal Blog,"<i class=""fas fa-link""></i> https://matiasandina.com/",,,,,,,
+TRUE,conferences_short,IL-1R1-positive dorsal raphe neurons drive self-imposed social withdrawal in sickness,Society For Neuroscience,,,2025,"L Yang, **ML Andina**, M Witkowski, H King, I Wickersham, JR Huh, GB Choi",,,
+TRUE,conferences_short,Interleukin-17a restores sociability in several mouse models for neurodevelopmental disorders.,Society For Neuroscience,,,2019,"Reed M.D., Yim Y.S., (...), **Andina M.,** (...), Huh J.R., Choi G.B",,,
+TRUE,skills,Biological Domain Expertise,"Rodent behavior, thermoregulation, energy balance, neural circuits.",,,,,,,
+TRUE,skills,Experimental Design,"Skilled at evaluating scientific evidence, hypothesis generation and designing relevant experiments.",,,,,,,
+TRUE,skills,Quantitative Analysis,"R (tidyverse, GLMMs), Python (numpy/polars/pandas, scikit-learn), signal processing, time-series, behavioral analysis.",,,,,,,
+TRUE,skills,Machine Learning,"Automated sleep/behavior state scoring with a custom ML pipeline. Achieved ~150x speedup per electrode (5h → 2min) and ~1500x throughput boost across multi-electrode sessions, enabling full-cohort analysis within minutes rather than days.",,,,,,,
+TRUE,skills,Experimental & Technical,"Rodent surgery (stereotaxic, abdominal), telemetry systems, sensor integration, open hardware design.",,,,,,,
+TRUE,skills,Tool-building,"R/Python package development and pipelines, documentation, reproducible workflows, Git/GitHub.",,,,,,,
+TRUE,skills,Project Management,Managed multi-device experiments and analysis pipelines involving hundreds of mice per project. Mentored 10+ trainees.,,,,,,,

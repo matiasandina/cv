@@ -5,6 +5,16 @@ date: "`r Sys.Date()`"
 params:
   pdf_mode:
     value: true
+  show_aside:
+    value: false
+  include_sections: [
+    "education",
+    "skills", 
+    "academic_articles", 
+    "teaching_positions", 
+    "software",
+    "awards", 
+    "mentoring"] # toggle on-off interactively or run with params from outside. Order here is not order in CV
 output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
@@ -31,6 +41,31 @@ CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
 
 ```
 
+
+```{r setup_sections, include=FALSE}
+# All section IDs used in your CV — long and short
+all_sections <- c(
+  "education",
+  "research_positions",
+  "academic_articles",
+  "teaching_positions",
+  "conferences",
+  "awards",
+  "mentoring",
+  "talks",
+  "service",
+  "software",
+  "data_science_writings",
+  "skills"
+)
+
+# For each section, compute whether to include it and store in a named list
+include <- lapply(all_sections, function(sec) {
+  sec %in% params$include_sections
+})
+names(include) <- all_sections
+```
+
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
 if(params$pdf_mode) {
@@ -43,60 +78,40 @@ if(params$pdf_mode) {
 }
 ```
 
+
+
 # Aside
 
-<!-- Swap image with your preferred logo -->
-
-<!-- ![logo](){width=100%} -->
-
-```{r photo}
-source("parse_twitter_pic.r")
-im <- parse_twitter_pic()
-im
-```
-
-##  {#contact}
-
-```{r}
-CV %>% print_contact_info()
-```
-
-```{r, eval=FALSE}
-# Not really interested in this
-# also, when rendered, it's not centered
-
-if(params$pdf_mode){
-  cat("View this CV online with links at _nickstrayer.me/datadrivencv/_")
+```{r, results='asis'}
+if (params$show_aside) {
+  cat(knitr::knit_child('sidebar.Rmd', quiet = TRUE))
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+  cat("
+<style>
+  .aside {
+    display: none !important;
+    width: 2 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+  }
+
+  :root {
+    --sidebar-width: 2px !important;
+    --content-width: 90% !important;       /* expand main content */
+    --decorator-width: 0px !important;      /* optional: shifts the timeline spine */
+  }
+
+  /* In pagedown templates Content is often placed inside .main / .content */
+  .main, .content {
+    max-width: 100% !important; 
+    width: 100% !important;
+  }
+
+</style>
+")
 }
 ```
-
-## <i class="fas fa-language"></i> Languages {#languages}
-
--   Spanish (native)
--   English (bilingual)
--   Portuguese (intermediate)
-
-## <i class="fa fa-code"></i> Programming {#skills}
-
--   R
--   Python
--   Matlab
--   git / GitHub
-
-## <i class="fa fa-area-chart"></i> Data analysis {#skills}
-
--   Data visualization (ggplot2, seaborn)
--   Linear models (GLM, GLMM)
--   Machine Learning (sklearn)
--   Image Processing (opencv)
-
-## <i class="fas fa-book-open"></i> Literate Coding {#skills}
-
--   Quarto
--   Rmarkdown
--   LaTeX
 
 # Main
 
@@ -113,10 +128,16 @@ if(params$pdf_mode){
 CV %<>% print_section('education')
 ```
 
-## Research Experience {data-icon="flask"}
 
-```{r}
-CV %<>% print_section('research_positions')
+```{r, eval=include[["research_positions"]]}
+knitr::asis_output('## Research Experience {data-icon="flask"}')
+```
+
+
+```{r, eval=include[["research_positions"]]}
+if ("research_positions" %in% params$include_sections) {
+  CV %<>% print_section('research_positions')
+}
 ```
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
@@ -129,25 +150,74 @@ CV %<>% print_section('research_positions')
 <br> <br>
  -->
 
-## Teaching Experience {data-icon="chalkboard-teacher"}
 
-::: aside
-```{r}
-#CV %<>% print_text_block('teaching_experience_aside')
-```
-:::
-
-```{r}
-CV %<>% print_section('teaching_positions')
+```{r, eval=include[["skills"]]}
+knitr::asis_output('## Skills {data-icon="tools" data-concise="true"}')
 ```
 
+```{r, eval=include[["skills"]]}
+CV %<>% print_section('skills')
+```
+
+ 
 ## Selected Publications {data-icon="file"}
 
 ```{r}
 CV %<>% print_section('academic_articles')
 ```
 
-Complete publication list at [Google Scholar](https://scholar.google.com/citations?user=PnTVdPAAAAAJ&hl=en).
+Complete publication list at <i class="fa fa-link" aria-hidden="true"></i> [Google Scholar](https://scholar.google.com/citations?user=PnTVdPAAAAAJ&hl=en).
+
+
+## Teaching Experience {data-icon="chalkboard-teacher"}
+
+```{r}
+# TODO: Properly parametrize each section
+if (params$show_aside) {
+  CV %<>% print_section('teaching_positions')
+} else {
+  CV %<>% print_section("teaching_positions_short")
+}
+```
+
+
+## Selected Conferences
+```{r}
+if (params$show_aside) {
+  CV %<>% print_section('conferences')
+} else {
+  CV %<>% print_section('conferences_short')
+}
+  
+```
+
+Complete conference list in <i class="fa fa-link" aria-hidden="true"></i> [this archive](https://matiasandina.github.io/cv_academic#conferences).
+
+
+## Selected Awards {data-icon="star-o"}
+
+```{r}
+# TODO: Properly parametrize each section
+if (params$show_aside) {
+  CV %<>% print_section('awards')
+}else{
+  CV %<>% print_section('awards_short')
+}
+```
+
+Complete award list in <i class="fa fa-link" aria-hidden="true"></i> [this archive](https://matiasandina.github.io/cv_academic.html#awards).
+
+## Mentoring {data-icon="handshake-o" data-concise="true"}
+
+```{r}
+# TODO: Properly parametrize each section
+if (params$show_aside) {
+  CV %<>% print_section('mentoring')
+}else{
+  CV %<>% print_section('mentoring_short')
+}
+
+```
 
 ## Selected Talks & Invited Lectures {data-icon="bullhorn"}
 
@@ -156,40 +226,28 @@ CV %<>% print_section('talks')
 
 ```
 
-## Conferences
-```{r}
-CV %<>% print_section('conferences')
+
+```{r, eval=include[["service"]]}
+knitr::asis_output('## Service {data-icon="university"}')
 ```
 
 
-## Awards {data-icon="star-o"}
-
-```{r}
-CV %<>% print_section('awards')
-```
-
-## Mentoring {data-icon="handshake-o" data-concise="true"}
-
-```{r}
-CV %<>% print_section('mentoring')
-
-
-```
-
-## Service {data-icon="university"}
-
-```{r}
+```{r, eval=include[["service"]]}
 CV %<>% print_section('service')
 ```
 
 
-## Software Development {data-icon="desktop"}
+
+```{r, eval=include[["software"]]}
+knitr::asis_output('## Software Development {data-icon="desktop"}')
+```
+
 
 :::aside
 I have a strong commitment towards using and developing open source tools. 
 :::
 
-```{r}
+```{r, eval=include[["software"]]}
 CV %<>% print_section('software')
 ```
 
@@ -197,16 +255,23 @@ CV %<>% print_section('software')
 Complete List of Software at [Github](https://github.com/matiasandina).
 
 
-## Selected Data Science Writing {data-icon="chart-line"}
+```{r, eval=include[['data_science_writings']]}
+knitr::asis_output('## Selected Data Science Writing {data-icon="chart-line"}')
+```
+
 
 ::: aside
-```{r}
+```{r, eval=include[['data_science_writings']]}
 CV %<>% print_text_block('data_science_writing_aside')
 ```
 :::
 
-```{r}
-CV %<>% print_section('data_science_writings')
+```{r, eval=include[['data_science_writings']]}
+if (params$show_aside) {
+  CV %<>% print_section('data_science_writings')
+}else{
+  CV %<>% print_section('data_science_writings_short')
+}
 ```
 
 ```{r}

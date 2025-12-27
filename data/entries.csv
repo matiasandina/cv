@@ -47,7 +47,7 @@ TRUE,conferences,Interleukin-17a restores sociability in several mouse models fo
 TRUE,conferences,Long-term memory induced by two training trials in the crab Neohelice granulata,Federation of European Neuroscience Societies,,,2018,"Ojea Ramos S., **Andina M.,** Feld M",,,
 TRUE,conferences,Two-trial long-term memory in the crab Neohelice granulata,Argentinean Society of Neuroscience Research,,,2015,"**Andina M.,** Romano A., Feld M",,,
 TRUE,conferences,Measuring crab ́s memory: improving conditioning,Argentinean Society of Neuroscience Research,,,2013,"**Andina M.,** (…), Romano A., Feld M.",,,
-TRUE,teaching_positions_short,Instructor of Record and Teaching Assistant roles in neuroscience and statistics.  ,"[<i class=""fas fa-link""></i> Full teaching list](https://matiasandina.github.io/cv_academic.html#teaching)",,2016,2023,,,,
+TRUE,teaching_positions_short,Instructor of Record and Teaching Assistant roles in neuroscience and statistics.  ,"[<i class=""fas fa-link""></i> Full teaching list](https://matiasandina.github.io/cv/cv_academic.html#teaching)",,2016,2023,,,,
 TRUE,awards_short,Picower Neurological Disorder Research Fund,Massachusetts Institute of Technology,NA,2022,2024,"Secured $75,000 to lead a collaborative research effort",NA,NA,NA
 TRUE,awards_short,Arete Fellowship,Massachusetts Institute of Technology,NA,NA,2021,Participated on weekly seminars in Effective Altruism discussion panel,NA,NA,NA
 TRUE,awards_short,Presidential Fellowship,Massachusetts Institute of Technology,NA,NA,2021,"Secured $43,000 to fund my PhD research",NA,NA,NA
@@ -62,3 +62,4 @@ TRUE,skills,Machine Learning,"Automated sleep/behavior state scoring with a cust
 TRUE,skills,Experimental & Technical,"Rodent surgery (stereotaxic, abdominal), telemetry systems, sensor integration, open hardware design.",,,,,,,
 TRUE,skills,Tool-building,"R/Python package development and pipelines, documentation, reproducible workflows, Git/GitHub.",,,,,,,
 TRUE,skills,Project Management,Managed multi-device experiments and analysis pipelines involving hundreds of mice per project. Mentored 10+ trainees.,,,,,,,
+TRUE,skills,Experience working in Linux environments,"Comfortable with command line, ssh, cluster jobs.",,,,,,,

@@ -57,7 +57,7 @@ TRUE,conferences_short,IL-1R1-positive dorsal raphe neurons drive self-imposed s
 TRUE,conferences_short,Interleukin-17a restores sociability in several mouse models for neurodevelopmental disorders.,Society For Neuroscience,,,2019,"Reed M.D., Yim Y.S., (...), **Andina M.,** (...), Huh J.R., Choi G.B",,,
 TRUE,skills,Biological Domain Expertise,"Rodent behavior, thermoregulation, energy balance, neural circuits.",,,,,,,
 TRUE,skills,Experimental Design,"Skilled at evaluating scientific evidence, hypothesis generation and designing relevant experiments.",,,,,,,
-TRUE,skills,Quantitative Analysis,"R (tidyverse, GLMMs), Python (numpy/polars/pandas, scikit-learn), signal processing, time-series, behavioral analysis.",,,,,,,
+TRUE,skills,Quantitative Analysis,"R (tidyverse, GLMMs), Python (numpy/polars/pandas, scikit-learn), signal processing, time-series, behavioral analysis.",,,,"Transcriptomic and spatial transcriptomic data analysis (MERFISH, multiome) using Scanpy-based workflows.",,,
 TRUE,skills,Machine Learning,"Automated sleep/behavior state scoring with a custom ML pipeline. Achieved ~150x speedup per electrode (5h → 2min) and ~1500x throughput boost across multi-electrode sessions, enabling full-cohort analysis within minutes rather than days.",,,,,,,
 TRUE,skills,Experimental & Technical,"Rodent surgery (stereotaxic, abdominal), telemetry systems, sensor integration, open hardware design.",,,,,,,
 TRUE,skills,Tool-building,"R/Python package development and pipelines, documentation, reproducible workflows, Git/GitHub.",,,,,,,

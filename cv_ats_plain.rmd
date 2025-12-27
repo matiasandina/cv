@@ -1,0 +1,175 @@
+---
+title: "Matias Leandro Andina - CV"
+params:
+  pdf_mode:
+    value: false
+output:
+  html_document:
+    self_contained: true
+    toc: false
+    theme: null
+    highlight: null
+    css: "cv_ats_plain.css"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results = "asis",
+  echo = FALSE
+)
+
+library(magrittr)
+library(dplyr)
+library(stringr)
+source("cv_printing_functions.r")
+
+sanitize_links <- function(cv, text) {
+  text <- stringr::str_replace_all(
+    text,
+    "\\[([^\\]]+)\\]\\(([^\\)]+)\\)",
+    "\\1 (\\2)"
+  )
+  list(cv = cv, text = text)
+}
+
+print_section_ats <- function(cv, section_id) {
+  section_data <- dplyr::filter(cv$entries_data, section == section_id)
+
+  for (i in 1:nrow(section_data)) {
+    for (col in c("title", "description_bullets")) {
+      strip_res <- sanitize_links(cv, section_data[i, col])
+      section_data[i, col] <- strip_res$text
+      cv <- strip_res$cv
+    }
+  }
+
+  section_data <- section_data %>%
+    dplyr::mutate(
+      institution = dplyr::if_else(institution == "N/A", "", institution),
+      loc = dplyr::if_else(loc == "N/A", "", loc),
+      start = dplyr::if_else(start == "N/A", "", start),
+      end = dplyr::if_else(end == "N/A", "", end)
+    )
+
+  section_data$timeline_ats <- apply(
+    section_data[, c("start", "end")],
+    1,
+    function(row) {
+      start <- row[1]
+      end <- row[2]
+      if (start == "" && end == "") {
+        ""
+      } else if (start != "" && end == "") {
+        paste(start, " - Current")
+      } else if (start == "" && end != "") {
+        end
+      } else {
+        paste(start, " - ", end, sep = "")
+      }
+    }
+  )
+
+  section_data$meta <- apply(
+    section_data[, c("institution", "loc", "timeline_ats")],
+    1,
+    function(row) {
+      parts <- row[row != ""]
+      paste(parts, collapse = " | ")
+    }
+  )
+
+  section_data$description_bullets <- stringr::str_replace(
+    section_data$description_bullets,
+    "^- ",
+    "  "
+  )
+  section_data$description_bullets <- stringr::str_replace_all(
+    section_data$description_bullets,
+    "\n- ",
+    "\n  "
+  )
+
+  glue_template <- "
+### {title}
+<div class='entry-meta'>{meta}</div>
+<div class='entry-desc'>
+{description_bullets}
+</div>
+
+"
+  print(glue::glue_data(section_data, glue_template))
+  invisible(cv)
+}
+
+CV <- create_CV_object(
+  data_location = "data/",
+  pdf_mode = params$pdf_mode
+)
+
+CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
+```
+
+# Matias Leandro Andina
+
+```{r, results='asis'}
+cat("<hr>")
+```
+
+```{r}
+contact_lines <- paste0("- ", CV$contact_info$loc, ": ", CV$contact_info$contact)
+cat(paste(contact_lines, collapse = "\n"))
+```
+
+## Education
+
+```{r}
+CV %<>% print_section_ats("education")
+```
+
+## Skills
+
+```{r}
+CV %<>% print_section_ats("skills")
+```
+
+## Selected Publications
+
+```{r}
+CV %<>% print_section_ats("academic_articles")
+```
+
+## Teaching Experience
+
+```{r}
+CV %<>% print_section_ats("teaching_positions_short")
+```
+
+## Selected Conferences
+
+```{r}
+CV %<>% print_section_ats("conferences_short")
+```
+
+## Selected Awards
+
+```{r}
+CV %<>% print_section_ats("awards_short")
+```
+
+## Mentoring
+
+```{r}
+CV %<>% print_section_ats("mentoring_short")
+```
+
+## Selected Talks & Invited Lectures
+
+```{r}
+CV %<>% print_section_ats("talks")
+```
+
+## Software Development
+
+```{r}
+CV %<>% print_section_ats("software")
+```
